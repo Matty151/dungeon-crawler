@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtkt6mlvsuw0d"]
+
+[ext_resource type="Script" path="res://Scripts/MapGenerator/MapGenerator.cs" id="1_8wa5r"]
+[ext_resource type="Script" path="res://Scripts/MapGenerator/MapRenderer.cs" id="2_q6wsx"]
+
+[node name="Root" type="Node2D"]
+
+[node name="MapGenerator" type="Node2D" parent="."]
+script = ExtResource("1_8wa5r")
+
+[node name="MapRenderer" type="Node2D" parent="." node_paths=PackedStringArray("mapGenerator", "room")]
+script = ExtResource("2_q6wsx")
+mapGenerator = NodePath("../MapGenerator")
+room = NodePath("")

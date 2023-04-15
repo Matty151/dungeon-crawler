@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvcmxyvwdxn8h"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerCharacterController.cs" id="1_7xlym"]
+[ext_resource type="Texture2D" uid="uid://bc6wb1fritvs3" path="res://Assets/RogueLike_Player.png" id="1_wyok6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ws1ug"]
+
+[sub_resource type="Gradient" id="Gradient_5u8yo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.260326, 0.165944, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6xacn"]
+gradient = SubResource("Gradient_5u8yo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmm8e"]
+size = Vector2(32, 57)
+
+[sub_resource type="TileSet" id="TileSet_6u8dl"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.25098, 1)
+
+[node name="Root" type="Node2D"]
+
+[node name="Ground" type="MeshInstance2D" parent="."]
+scale = Vector2(896, 512)
+mesh = SubResource("BoxMesh_ws1ug")
+texture = SubResource("GradientTexture2D_6xacn")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_7xlym")
+
+[node name="Camera" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_rmm8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_wyok6")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="World"]
+tile_set = SubResource("TileSet_6u8dl")
+format = 2
