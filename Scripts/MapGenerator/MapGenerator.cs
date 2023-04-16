@@ -92,9 +92,11 @@ public partial class MapGenerator : Node2D
         }
 
         if (
+            !this.allowLoops
+            &&
             this.map.GetNeighbourCoords(coords)
                 .Select(this.map.GetCellValue)
-                .Count(neighbour => neighbour != null) > (this.allowLoops ? 2 : 1)
+                .Count(neighbour => neighbour != null) > 1
         ) {
             return false;
         }
