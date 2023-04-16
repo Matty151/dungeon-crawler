@@ -85,9 +85,9 @@ public partial class MapGenerator : Node2D
 
     private bool ShouldCreateRoom(Vector2I coords)
     {
-        Room neighbourRoom = this.map.GetCellValue(coords);
+        Room room = this.map.GetCellValue(coords);
 
-        if (neighbourRoom != null) {
+        if (room != null) {
             return false;
         }
 
