@@ -1,20 +1,17 @@
+using Godot;
+
 namespace RogueLike.Scripts.MapGenerator;
 
 public class Door
 {
-    private Room room;
-    private int position;
+    public Room Room { get; }
+    public Vector2 Position { get; }
 
-    private Room nextRoom;
+    public Room NextRoom { get; set; }
 
-    public Door(Room room, int position)
+    public Door(Room room, Vector2 position)
     {
-        this.room = room;
-        this.position = position;
-    }
-
-    public void SetNextRoom(Room room)
-    {
-        this.nextRoom = room;
+        this.Room = room;
+        this.Position = position;
     }
 }

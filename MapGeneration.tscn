@@ -5,10 +5,14 @@
 
 [node name="Root" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 320)
+zoom = Vector2(0.9, 0.9)
+
 [node name="MapGenerator" type="Node2D" parent="."]
 script = ExtResource("1_8wa5r")
+amountOfDesiredRooms = 14
 
-[node name="MapRenderer" type="Node2D" parent="." node_paths=PackedStringArray("mapGenerator", "room")]
+[node name="MapRenderer" type="Node2D" parent="." node_paths=PackedStringArray("mapGenerator")]
 script = ExtResource("2_q6wsx")
 mapGenerator = NodePath("../MapGenerator")
-room = NodePath("")
