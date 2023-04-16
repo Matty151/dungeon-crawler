@@ -1,4 +1,3 @@
-using System.Linq;
 using com.matty.Grid2d;
 using Godot;
 
@@ -19,16 +18,6 @@ public partial class MapRenderer : Node2D
 
     private void RenderMap(Grid2d<Room> map)
     {
-        // for (int x = 0; x < map.Width; x++) {
-        //     for (int y = 0; y < map.Height; y++) {
-        //         Room room = map.GetCellValue(x, y);
-        //
-        //         if (room != null) {
-        //             this.RenderRoom(x, y, room);
-        //         }
-        //     }
-        // }
-
         Grid2dScannerIterator<Room> mapIterator = new(map);
 
         while (mapIterator.HasNext()) {

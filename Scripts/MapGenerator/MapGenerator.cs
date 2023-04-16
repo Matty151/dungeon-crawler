@@ -33,10 +33,8 @@ public partial class MapGenerator : Node2D
     private Grid2d<Room> map;
     private Queue<Room> queue = new();
 
-    public override void _Ready()
+    public MapGenerator()
     {
-        base._Ready();
-
         this.map = new(this.gridWidth, this.gridHeight);
     }
 

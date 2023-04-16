@@ -58,7 +58,7 @@ public class Grid2d<T>
             new(x, y - 1), // Top
             new(x + 1, y), // Right
             new(x, y + 1), // Bottom
-            new (x - 1, y), // Left
+            new(x - 1, y), // Left
         };
 
         return neighbours.Where(neighbour => this.AreCoordinatesInBounds(neighbour.X, neighbour.Y)).ToArray();

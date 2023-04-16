@@ -1,5 +1,3 @@
-using Godot;
-
 namespace com.matty.Grid2d;
 
 public class Grid2dScannerIterator<T>
